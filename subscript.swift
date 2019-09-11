@@ -4,12 +4,13 @@ class hariDalamSepekan{
     private var hari = ["ahad","senin","selasa","rabu","kamis","jumat","sabtu"]
 
     subscript(index:Int)->String{
-        
+        // fungsi get untuk mendapatkan hasilnya
         get {
             return hari[index]
         }
-        
+        // fungsi set untuk menetapkan hasil baru jika ingin merubah
         set(nilaiBaru){
+        
             self.hari[index] = nilaiBaru
         }
         
