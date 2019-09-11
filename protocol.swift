@@ -1,4 +1,4 @@
-// protocol adalah pendefisian secara terperinci dari method , property , atau perintah yang berhubungan dengan functionalitas . Protocol lalu di adopsi kedalam kelas atau struct
+// protocol adalah pendefisian secara terperinci dari method , property , atau perintah yang berhubungan dengan functionalitas . Protocol lalu di adopsi kedalam kelas atau struct. Protocol menggunakan assosiated type
 
 protocol FullNameable{
     var fullname : String { get }
@@ -34,7 +34,34 @@ print(guru, guru.fullname)
 
  print(murid, murid.fullname)
 
+ // protocol assosiated type
+
+// dengan protocol assosiated type kita bisa menginisialisasikan tipe data pada protocol secara dinamis
 
 
- 
- 
+ protocol MyNameString{
+     associatedtype DT
+     var name: DT {get set}
+ }
+ struct ForMyName: MyNameString{
+     var name = String()
+ }
+
+ var fullName = ForMyName()
+
+ fullName.name = "muhammad hafif al busyro"
+
+  print(fullName)
+
+
+protocol MyNumberInt{
+    associatedtype DT
+    var number : DT {get set}
+}
+struct ForMyNumber: MyNumberInt{
+    var number = Int()
+}
+
+var ofnumber = ForMyNumber()
+ofnumber.number = 11
+print(ofnumber)
