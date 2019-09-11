@@ -47,3 +47,38 @@ print(boilingPointOfWater2.temperatureInCelsius)
 // boilingPointOfWater.temperatureInCelsius is 100.0
 let freezingPointOfWater2 = Celsius2(fromKelvin: 273.15)
 print(freezingPointOfWater2.temperatureInCelsius)
+
+
+
+// parameter name dan argument label
+
+struct Color{
+    var red, green, blue: Double
+    init(red:Double, green:Double,blue:Double){
+        self.red   = red
+        self.green = green
+        self.blue  = blue
+    }
+    init(white:Double){
+        red   = white
+        green = white
+        blue  = white
+    }
+}
+
+var magenta = Color(red: 1.0, green: 0.0, blue: 1.0)
+print(magenta)
+var halfGrey = Color(white: 0.5)
+
+// initialization tanpa argument label
+
+struct Color2{
+    var red: Double
+    init(_ red: Double){
+        self.red = red
+    }
+}
+
+
+var colorRed = Color2(1.0)
+print(colorRed.red)
